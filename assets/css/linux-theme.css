@@ -1,0 +1,233 @@
+/*
+   Linux Theme Customization
+   Тёмная терминальная тема с зелёными акцентами
+*/
+
+/* Основные цвета Linux/Terminal темы */
+:root {
+    --terminal-bg: #0d1117;
+    --terminal-dark: #161b22;
+    --terminal-green: #00ff41;
+    --terminal-blue: #58a6ff;
+    --terminal-text: #c9d1d9;
+    --terminal-muted: #8b949e;
+}
+
+/* Тёмный фон для header */
+#header {
+    background: rgba(13, 17, 23, 0.95) !important;
+    border-bottom: 2px solid var(--terminal-green);
+}
+
+#header h1 a {
+    color: var(--terminal-green) !important;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+}
+
+/* Стиль навигации */
+#nav > ul > li > a {
+    color: var(--terminal-text) !important;
+}
+
+#nav > ul > li > a:hover {
+    color: var(--terminal-green) !important;
+}
+
+/* Кнопка "Скачать" */
+.button.primary {
+    background-color: var(--terminal-green) !important;
+    color: #000 !important;
+    font-weight: bold;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+}
+
+.button.primary:hover {
+    background-color: var(--terminal-blue) !important;
+    box-shadow: 0 0 25px rgba(88, 166, 255, 0.5);
+}
+
+/* Баннер с терминальным эффектом и темным фоном */
+#banner {
+    background:
+        linear-gradient(135deg, rgba(13, 17, 23, 0.85) 0%, rgba(10, 14, 19, 0.9) 100%),
+        url('../images/banner.jpg') center/cover;
+    position: relative;
+}
+
+#banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(0, 255, 65, 0.02) 0px,
+            transparent 1px,
+            transparent 2px,
+            rgba(0, 255, 65, 0.02) 3px
+        );
+    pointer-events: none;
+}
+
+#banner h2 {
+    color: var(--terminal-green) !important;
+    text-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+}
+
+#banner p {
+    color: var(--terminal-text) !important;
+}
+
+/* Секции с темными градиентными фонами */
+.spotlight.style1 {
+    background:
+        radial-gradient(circle at 20% 50%, rgba(0, 255, 65, 0.08) 0%, transparent 50%),
+        #0a0e13;
+}
+
+.spotlight.style2 {
+    background:
+        linear-gradient(45deg, rgba(88, 166, 255, 0.06) 0%, transparent 50%, rgba(0, 255, 65, 0.06) 100%),
+        #0d1117;
+}
+
+.spotlight.style3 {
+    background:
+        radial-gradient(ellipse at 80% 50%, rgba(0, 255, 65, 0.1) 0%, transparent 60%),
+        #0a0e13;
+}
+
+/* Фоны для изображений (если изображения не загружены) */
+.image.fit img {
+    background: #0d1117;
+    border: 1px solid rgba(0, 255, 65, 0.1);
+}
+
+/* Стили для основного контента */
+#main.wrapper.style1 {
+    background: #0d1117 !important;
+}
+
+#main.wrapper.style1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(0, 255, 65, 0.03) 0%, transparent 40%),
+        radial-gradient(circle at 70% 80%, rgba(88, 166, 255, 0.03) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Заголовки */
+h2, h3, h4 {
+    color: var(--terminal-green) !important;
+}
+
+/* Код блоки в терминальном стиле */
+code {
+    background: var(--terminal-dark) !important;
+    color: var(--terminal-green) !important;
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+}
+
+pre {
+    background: var(--terminal-dark) !important;
+    border-left: 3px solid var(--terminal-green);
+    padding: 1em;
+}
+
+pre code {
+    background: transparent !important;
+    border: none;
+}
+
+/* Цитаты */
+blockquote {
+    border-left: 4px solid var(--terminal-green);
+    background: rgba(0, 255, 65, 0.05);
+    padding: 1em 1.5em;
+    color: var(--terminal-text);
+}
+
+/* Иконки с зелёным свечением */
+.icon.major {
+    color: var(--terminal-green) !important;
+}
+
+/* Footer */
+#footer {
+    background: var(--terminal-bg);
+    border-top: 2px solid var(--terminal-green);
+}
+
+#footer .icons a {
+    border-color: var(--terminal-green);
+    color: var(--terminal-green) !important;
+}
+
+#footer .icons a:hover {
+    background: var(--terminal-green);
+    color: #000 !important;
+}
+
+/* Ссылки */
+a {
+    color: var(--terminal-blue);
+}
+
+a:hover {
+    color: var(--terminal-green);
+}
+
+/* Списки */
+ul li::before {
+    color: var(--terminal-green);
+}
+
+/* Анимация терминального курсора для заголовков */
+@keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+h2::after {
+    content: '█';
+    color: var(--terminal-green);
+    animation: blink 1s infinite;
+    margin-left: 5px;
+}
+
+/* Дополнительные фоновые эффекты для карточек */
+.box {
+    background: #0d1117;
+    border: 1px solid rgba(0, 255, 65, 0.2);
+}
+
+.box:hover {
+    border-color: var(--terminal-green);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+}
+
+/* Темный фон для всего body */
+body {
+    background: #0a0e13 !important;
+}
+
+/* Spotlight секции с темными фонами */
+.spotlight {
+    background: #0d1117 !important;
+}
+
+.spotlight .content {
+    background: transparent;
+}
