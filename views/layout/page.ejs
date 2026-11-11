@@ -3,8 +3,26 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/linux-theme.css' />
   </head>
   <body>
+    <nav class="lnx-nav">
+      <a class="lnx-nav__brand" href="/">Linux</a>
+      <button class="lnx-nav__toggle" type="button" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="lnx-nav__menu">
+        <a href="/ubuntu">Ubuntu</a>
+        <a href="/arch">Arch Linux</a>
+        <a href="/fedora">Fedora</a>
+      </div>
+    </nav>
     <%- body %>
+    <script>
+      // простое переключение меню на узких экранах
+      document.querySelector('.lnx-nav__toggle')?.addEventListener('click', function () {
+        document.querySelector('.lnx-nav__menu').classList.toggle('lnx-nav__menu--open');
+      });
+    </script>
   </body>
 </html>
